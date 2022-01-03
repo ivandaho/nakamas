@@ -1,0 +1,4 @@
+.env
+.vim
+build
+node_modules
