@@ -13,7 +13,11 @@ const ChoreItem: React.FC<ChoreItemProps> = (props) => {
     <>
       <div className="chore_title">{text}</div>
       {schedule.map((item, i) => {
-        return <div key={i} className={`schedule_person ${item} ${todayIndex - 1 === i ? 'today' : ''}`}>{item}</div>;
+        return (
+          <div key={i} className={`schedule_person ${item} ${todayIndex - 1 === i ? 'today' : ''}`}>
+            {item}
+          </div>
+        );
       })}
     </>
   );

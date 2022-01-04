@@ -27,7 +27,7 @@ const Schedule: React.FC<ScheduleProps> = (props) => {
         schedule: [Nakama.Ivan, Nakama.Germ, Nakama.Gina, Nakama.Ivan, Nakama.Germ, Nakama.Gina, specialChoreNakama]
       },
       {
-        text: 'Throw trash',
+        text: 'Trash',
         schedule: [Nakama.Ivan, Nakama.Germ, Nakama.Gina, Nakama.Ivan, Nakama.Germ, Nakama.Gina, specialChoreNakama]
       },
       { text: 'Vacuum', schedule: [Nakama.Gina, '', Nakama.Germ, '', Nakama.Ivan, '', ''] }
@@ -37,18 +37,16 @@ const Schedule: React.FC<ScheduleProps> = (props) => {
   return (
     <div className={`schedule_container ${!week ? 'current' : ''}`}>
       <div className={`week_schedule week${week}`}>
-        <DaysOfWeek startDate={startOfWeekDate} spacer />
+        <DaysOfWeek today={today} startDate={startOfWeekDate} spacer />
         {chores.map((c, i) => (
           <ChoreItem key={i} text={c.text} schedule={c.schedule} todayIndex={!week ? todayIndex : -1} />
         ))}
-      </div>
-      <div className={`special_chores week${week}`}>
-        <div className="header">Group 1</div>
-        <div className="header">Group 2</div>
-        <div className="header">Group 3</div>
-        <SpecialChores nakama={specialChoreNakama} />
-        <SpecialChores nakama={getAt(SPECIAL_CHORE_CYCLE_NAKAMAS, specialChoreNakamaIndex - 1)} />
-        <SpecialChores nakama={getAt(SPECIAL_CHORE_CYCLE_NAKAMAS, specialChoreNakamaIndex - 2)} />
+        <div className="chore_title">Bathroom</div>
+        <SpecialChores row active={!week} nakama={specialChoreNakama} />
+        <div className="chore_title">Kitchen</div>
+        <SpecialChores row active={!week} nakama={getAt(SPECIAL_CHORE_CYCLE_NAKAMAS, specialChoreNakamaIndex - 1)} />
+        <div className="chore_title">Others</div>
+        <SpecialChores row active={!week} nakama={getAt(SPECIAL_CHORE_CYCLE_NAKAMAS, specialChoreNakamaIndex - 2)} />
       </div>
     </div>
   );
