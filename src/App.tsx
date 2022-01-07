@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import moment from 'moment';
+import { useEffect, useRef } from 'react';
 import './App.scss';
+import Schedule from './pages/Schedule';
 
 function App() {
+  const timer = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    timer.current = setTimeout(() => {
+      // force reload after 12am
+      window.location.reload();
+    }, moment.duration(moment().endOf('day').diff(moment())).as('milliseconds') + 1000);
+
+    return () => {
+      if (timer.current) {
+        clearTimeout(timer.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="root_container">
+      <Schedule week={-1} />
+      <Schedule />
+      <Schedule week={1} />
+      <div className="notes">
+        <div>group 1: bathroom - sink, countertop, mirror</div>
+        <div>group 2: kitchen - sink, countertop, stove, drying mat</div>
+        <div>group 3: others - mop</div>
+      </div>
     </div>
   );
 }
