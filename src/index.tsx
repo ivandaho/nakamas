@@ -14,7 +14,7 @@ ReactDOM.render(
       <Schedule week={-1} />
       <Schedule />
       <Schedule week={1} />
-      <div>
+      <div className="notes">
         <div>group 1: bathroom - sink, countertop, mirror</div>
         <div>group 2: kitchen - sink, countertop, stove, drying mat</div>
         <div>group 3: others - mop</div>
