@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/nakamas/static/css/main.170c95ca.css",
-    "main.js": "/nakamas/static/js/main.415ad715.js",
+    "main.css": "/nakamas/static/css/main.36b5e64c.css",
+    "main.js": "/nakamas/static/js/main.93eef9df.js",
     "static/js/787.5d6f8588.chunk.js": "/nakamas/static/js/787.5d6f8588.chunk.js",
     "index.html": "/nakamas/index.html",
-    "main.170c95ca.css.map": "/nakamas/static/css/main.170c95ca.css.map",
-    "main.415ad715.js.map": "/nakamas/static/js/main.415ad715.js.map",
+    "main.36b5e64c.css.map": "/nakamas/static/css/main.36b5e64c.css.map",
+    "main.93eef9df.js.map": "/nakamas/static/js/main.93eef9df.js.map",
     "787.5d6f8588.chunk.js.map": "/nakamas/static/js/787.5d6f8588.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.170c95ca.css",
-    "static/js/main.415ad715.js"
+    "static/css/main.36b5e64c.css",
+    "static/js/main.93eef9df.js"
   ]
 }
