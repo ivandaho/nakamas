@@ -11,13 +11,11 @@ interface ScheduleProps {
   week?: -1 | 1;
 }
 
-const offset = 0;
-
 const Schedule: React.FC<ScheduleProps> = (props) => {
   const { week } = props;
-  const startOfWeekDate = moment().add(offset, 'weeks').day('monday').add(week, 'week');
-  const today = moment().add(offset, 'weeks').startOf('day');
-  const todayIndex = today.day();
+  const startOfWeekDate = moment().startOf('isoWeek').add(week, 'week');
+  const today = moment().startOf('day');
+  const todayIndex = today.isoWeekday();
   const specialChoreNakamaIndex = getWeekSpecialChoreNakamaIndex(startOfWeekDate);
   const specialChoreNakama = getAt(SPECIAL_CHORE_CYCLE_NAKAMAS, specialChoreNakamaIndex);
   const chores: Chore[] = useMemo(() => {
