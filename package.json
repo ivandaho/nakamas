@@ -48,7 +48,11 @@
   },
   "devDependencies": {
     "@types/moment": "^2.13.0",
-    "@types/react-calendar": "^3.4.4"
+    "@types/react-calendar": "^3.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "eslint": "^8.24.0",
+    "eslint-plugin-react": "^7.31.8"
   },
-	"homepage": "https://ivandaho.github.io/nakamas"
+  "homepage": "https://ivandaho.github.io/nakamas"
 }
